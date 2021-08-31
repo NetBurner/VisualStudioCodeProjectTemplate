@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "NetBurner Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/obj/debug/<debug_elf>.elf",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/nburn/gcc/bin/arm-eabi-gdb.exe",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "text": "file '<full_path>/obj/debug/<debug_elf>.elf'"
+        },
+        {
+          "text": "target remote <nb_ipaddress>:2159"
+        }
+      ]
+    }
+  ]
+}

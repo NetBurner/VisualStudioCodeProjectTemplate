@@ -1,0 +1,39 @@
+{
+  "env": {
+    "NB_PATH": "C:/nburn"
+  },
+  "configurations": [
+    {
+      "name": "Netburner MODM7",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "browse": {
+        "path": [
+          "${workspaceFolder}",
+          "${NB_PATH}"
+        ],
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/src",
+        "${workspaceFolder}/**",
+        "${NB_PATH}/gcc/arm-unknown-eabi/sys-include/",
+        "${NB_PATH}/arch/cortex-m7/cpu/SAME70/include",
+        "${NB_PATH}/arch/cortex-m7/include",
+        "${NB_PATH}/gcc/arm-unknown-eabi/include",
+        "${NB_PATH}/gcc/arm-unknown-eabi/include/c++/8.1.0",
+        "${NB_PATH}/gcc/arm-unknown-eabi/include/c++/8.1.0/arm-unknown-eabi",
+        "${NB_PATH}/gcc/arm-unknown-eabi/include/c++/8.1.0/backward",
+        "${NB_PATH}/gcc/arm-unknown-eabi/sys-include/**",
+        "${NB_PATH}/gcc/lib/gcc/arm-unknown-eabi/8.1.0/include",
+        "${NB_PATH}/gcc/lib/gcc/arm-unknown-eabi/8.1.0/include-fixed",
+        "${NB_PATH}/libraries/include",
+        "${NB_PATH}/nbrtos/include",
+        "${NB_PATH}/platform/MODM7AE70/include"
+      ],
+      "intelliSenseMode": "gcc-arm"
+    }
+  ],
+  "version": 4
+}
