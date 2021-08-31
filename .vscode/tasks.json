@@ -1,0 +1,108 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Project",
+      "type": "shell",
+      "command": "make -j",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ]
+      }
+    },
+    {
+      "label": "Build & Load Project",
+      "type": "shell",
+      "command": "make -j load DEVIP=192.168.0.100",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ]
+      }
+    },
+    {
+      "label": "Build Debug Project",
+      "type": "shell",
+      "command": "make -j debug",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ]
+      }
+    },
+    {
+      "label": "Build Debug & Load Project",
+      "type": "shell",
+      "command": "make -j loaddebug DEVIP=192.168.0.100",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ]
+      }
+    },
+    {
+      "label": "Clean Project",
+      "type": "shell",
+      "command": "make clean",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ]
+      }
+    },
+    {
+      "label": "Run addr2line tool",
+      "type": "shell",
+      "command": "arm-eabi-addr2line -Cife obj/release/NetburnerBase.elf ${input:addr2line}",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": {
+        "base": "$gcc",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ]
+      }
+    },
+  ],
+  "inputs": [
+    {
+      "id": "addr2line",
+      "type": "promptString",
+      "description": "Enter the address to search"
+    }
+  ]
+}
